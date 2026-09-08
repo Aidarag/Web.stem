@@ -18,6 +18,7 @@ import { studentSpotlights, competitions } from '@/data/stemData';
 // wrapper below) is what defers the expensive layout/paint work until each
 // section is about to scroll into view.
 const AcademicProgramsSection = dynamic(() => import('@/components/home/AcademicProgramsSection'));
+const SummerSTEMSection = dynamic(() => import('@/components/home/SummerSTEMSection'));
 const FeaturedStudentsSection = dynamic(() => import('@/components/home/FeaturedStudentsSection'));
 const AchievementsSection = dynamic(() => import('@/components/home/AchievementsSection'));
 const CommunityShowcaseSection = dynamic(() => import('@/components/home/CommunityShowcaseSection'));
@@ -101,7 +102,7 @@ export default function Home() {
                 <div className="flex -space-x-3 overflow-hidden">
                   <Image src="/images/cis-student-success/im-aida-garba-profile.jpeg" alt="Aïda Garba (CIS)" width={48} height={48} className="inline-block h-12 w-12 rounded-full ring-2 ring-purple-900 object-cover" />
                   <Image src="/images/biology-student-success/francis-boadu-profile.jpg" alt="Francis Boadu (Biology)" width={48} height={48} className="inline-block h-12 w-12 rounded-full ring-2 ring-purple-900 object-cover" />
-                  <Image src="/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg" alt="Kamar Goudelock (Business)" width={48} height={48} className="inline-block h-12 w-12 rounded-full ring-2 ring-purple-900 object-cover" />
+                  <Image src="/images/cis-student-success/jerome-adonis-headshot.jpg" alt="Jerome Adonis (CIS)" width={48} height={48} className="inline-block h-12 w-12 rounded-full ring-2 ring-purple-900 object-cover" />
                   <Image src="/images/math-student-success/sally-adenutsi-profile.jpeg" alt="Sally Adenutsi (Mathematics)" width={48} height={48} className="inline-block h-12 w-12 rounded-full ring-2 ring-purple-900 object-cover animate-pulse-slow" />
                 </div>
                 <div>
@@ -135,7 +136,7 @@ export default function Home() {
               </div>
               <div className="pt-2 md:pt-0">
                 <h3 className="font-serif text-4xl md:text-5xl font-extrabold text-[#e3fc51]">
-                  <StatCounter end={4} />
+                  <StatCounter end={3} />
                 </h3>
                 <p className="mt-2 font-mono text-xs sm:text-sm uppercase tracking-wider text-purple-200 font-semibold">STEM Concentrations</p>
               </div>
@@ -180,6 +181,11 @@ export default function Home() {
         <AcademicProgramsSection />
       </DeferredOffscreen>
 
+      {/* Summer STEM Program Showcase — Pre-College Pipeline Callout */}
+      <DeferredOffscreen minHeight={600}>
+        <SummerSTEMSection />
+      </DeferredOffscreen>
+
       {/* 04 — Featured Students Section — CRISP LIGHT MODE */}
       <DeferredOffscreen minHeight={1000}>
         <FeaturedStudentsSection featuredStudents={featuredStudents} />
@@ -206,7 +212,7 @@ export default function Home() {
                 Got <span className="text-purple-600">Questions?</span>
               </h2>
               <p className="font-sans text-base sm:text-lg text-gray-600 leading-relaxed max-w-md">
-                Livingstone STEM is your gateway to a high-impact technical career. With our four specialized tracks, hands-on lab research, and industry partnerships, you&apos;ll gain the skills, confidence, and portfolio to stand out.
+                Livingstone STEM is your gateway to a high-impact technical career. With our three specialized tracks, hands-on lab research, and industry partnerships, you&apos;ll gain the skills, confidence, and portfolio to stand out.
               </p>
               <div>
                 <Link
@@ -223,7 +229,7 @@ export default function Home() {
               {[
                 {
                   q: "1. What STEM concentrations are offered at Livingstone College?",
-                  a: "Livingstone College offers four specialized academic tracks: Computer Information Systems (CIS), Biology, Mathematics & Data Science, and Business Analytics."
+                  a: "Livingstone College offers three specialized academic tracks: Computer Information Systems (CIS), Biology, and Mathematics & Data Science."
                 },
                 {
                   q: "2. How can I participate in undergraduate research or hackathons?",

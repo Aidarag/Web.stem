@@ -39,10 +39,10 @@ const columns = [
     iconColor: 'text-pink-300',
     majorColor: 'text-pink-200',
     students: [
-      { id: '3', name: 'Kamar Goudelock', major: 'Business & STEM', img: '/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg' },
+      { id: '16', name: 'Aïda Garba', major: 'CIS Major', img: '/images/cis-student-success/im-aida-garba-profile.jpeg' },
       { id: '8', name: 'Jephter Ofori', major: 'CIS Fellow', img: '/images/cis-student-success/jephter-ofori-syngenta-profile.png' },
       { id: '5', name: 'Robert Osei', major: 'Biology Major', img: '/images/biology-student-success/robert-osei-poe-center-internship.jpeg' },
-      { id: '3', name: 'Kamar Goudelock', major: 'Business & STEM', img: '/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg' },
+      { id: '16', name: 'Aïda Garba', major: 'CIS Major', img: '/images/cis-student-success/im-aida-garba-profile.jpeg' },
       { id: '8', name: 'Jephter Ofori', major: 'CIS Fellow', img: '/images/cis-student-success/jephter-ofori-syngenta-profile.png' },
     ],
   },
@@ -58,10 +58,10 @@ const columns = [
     majorColor: 'text-indigo-200',
     students: [
       { id: '15', name: 'Francis Suapim', major: 'Mathematics', img: '/images/math-student-success/francis-suapim-profile-v2.png' },
-      { id: '6', name: 'Emmanuel Amponsah', major: 'Business & STEM', img: '/images/business-student-success/emmanuel-amponsah-business-profile.jpeg' },
+      { id: '11', name: 'Swetakshi Nanda', major: 'CIS Major', img: '/images/cis-student-success/swetakshi-nanda-profile.jpeg' },
       { id: '13', name: 'Naomi Nuhamin Bullo', major: 'Biology Major', img: '/images/biology-student-success/naomi-nuhamin-bullo-profile.jpeg' },
       { id: '15', name: 'Francis Suapim', major: 'Mathematics', img: '/images/math-student-success/francis-suapim-profile-v2.png' },
-      { id: '6', name: 'Emmanuel Amponsah', major: 'Business & STEM', img: '/images/business-student-success/emmanuel-amponsah-business-profile.jpeg' },
+      { id: '11', name: 'Swetakshi Nanda', major: 'CIS Major', img: '/images/cis-student-success/swetakshi-nanda-profile.jpeg' },
     ],
   },
 ];

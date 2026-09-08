@@ -10,8 +10,9 @@ interface FeaturedStudentsSectionProps {
 }
 
 export default function FeaturedStudentsSection({ featuredStudents }: FeaturedStudentsSectionProps) {
-  // Select 4 featured students across all 4 departments: Jerome (CIS), Francis (Biology), Sally (Math), Ellis (Business)
-  const selectedIds = ['1', '2', '4', '7'];
+  // Select 3 featured students across the 3 STEM concentrations: Jerome (CIS), Francis (Biology), Sally (Math)
+  // (Business student profile is kept preserved in data and hidden from active display)
+  const selectedIds = ['1', '2', '4'];
   const displayStudents = selectedIds
     .map((id) => featuredStudents.find((student) => student.id === id))
     .filter((student): student is StudentSpotlight => Boolean(student));
@@ -41,8 +42,8 @@ export default function FeaturedStudentsSection({ featuredStudents }: FeaturedSt
           </Link>
         </div>
 
-        {/* Student Grid (4 Columns for 4 Cards) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Student Grid (3 Columns for 3 STEM Concentrations) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {displayStudents.map((student) => (
             <div
               key={student.id}
@@ -58,7 +59,7 @@ export default function FeaturedStudentsSection({ featuredStudents }: FeaturedSt
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       style={{ objectPosition: student.cardPhoto ? 'center' : student.photoPosition || 'center' }}
-                      sizes="(max-width: 768px) 100vw, 25vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute top-4 left-4 border border-purple-400/40 bg-purple-600 text-[#e3fc51] backdrop-blur-md px-3.5 py-1.5 rounded-full font-mono text-xs font-extrabold uppercase tracking-wider shadow-md">
                       {student.gradYear ? `Class of ${student.gradYear}` : 'Featured Student'}

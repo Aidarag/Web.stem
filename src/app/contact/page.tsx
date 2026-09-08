@@ -107,7 +107,8 @@ function ContactFormContent() {
                 <option value="Computer Information Systems">Computer Information Systems</option>
                 <option value="Biology">Biology</option>
                 <option value="Mathematics">Mathematics</option>
-                <option value="Business">Business</option>
+                {/* Hidden Business concentration kept for future restoration */}
+                {/* <option value="Business">Business</option> */}
               </select>
             </div>
 

@@ -26,6 +26,7 @@ const programs = [
     color: 'text-pink-400 bg-pink-500/10 border-pink-500/20',
     href: '/programs/business',
     icon: <TrendingUp className="h-7 w-7" />,
+    hidden: true,
   },
   {
     name: 'Mathematics',
@@ -38,6 +39,8 @@ const programs = [
 ];
 
 export default function AcademicProgramsSection() {
+  const visiblePrograms = programs.filter((program) => !program.hidden);
+
   return (
     <section className="relative bg-[#070312] py-24 md:py-32 border-b border-white/10 text-white overflow-hidden">
       <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-purple-600/10 blur-[100px] pointer-events-none" />
@@ -52,13 +55,13 @@ export default function AcademicProgramsSection() {
             Academic <span className="text-gradient-purple-pink">Concentrations</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-gray-300 max-w-xl">
-            Choose your path. Our department features four dedicated curriculum tracks matching rigorous scientific research with modern market applications.
+            Choose your path. Our department features three dedicated curriculum tracks matching rigorous scientific research with modern market applications.
           </p>
         </ScrollReveal>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {programs.map((program) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {visiblePrograms.map((program) => (
             <ScrollReveal
               key={program.name}
               className={`glass-card-dark border-l-4 ${program.accent} rounded-3xl p-8 flex flex-col justify-between h-full hover:scale-[1.02] hover:border-purple-400/60 cursor-pointer shadow-2xl transition-all`}

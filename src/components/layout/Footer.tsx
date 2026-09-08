@@ -73,19 +73,32 @@ export default function Footer() {
                 { name: 'Home', href: '/' },
                 { name: 'About', href: '/about' },
                 { name: 'Programs', href: '/programs/computer-information-systems' },
+                { name: 'Summer STEM', href: 'https://stem-program-delta.vercel.app/', external: true },
                 { name: 'Spotlights', href: '/spotlight' },
                 { name: 'Achievements', href: '/projects' },
                 { name: 'News & Events', href: '/news-events' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="hover:text-purple-300 hover:translate-x-1 transition-all inline-flex items-center gap-1.5 group"
-                  >
-                    <span className="text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity font-bold">›</span>
-                    {link.name}
-                  </Link>
+                  {'external' in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-purple-300 hover:translate-x-1 transition-all inline-flex items-center gap-1.5 group"
+                    >
+                      <span className="text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity font-bold">›</span>
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="hover:text-purple-300 hover:translate-x-1 transition-all inline-flex items-center gap-1.5 group"
+                    >
+                      <span className="text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity font-bold">›</span>
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

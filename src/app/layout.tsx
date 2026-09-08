@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: 'LC STEM Showcase | Livingstone College',
     template: '%s | LC STEM',
   },
-  description: 'Explore Livingstone College STEM student portfolios, independent lab research, hackathon medals, and academic concentrations in CIS, Biology, Mathematics, and Business.',
+  description: 'Explore Livingstone College STEM student portfolios, independent lab research, hackathon medals, and academic concentrations in CIS, Biology, and Mathematics.',
   keywords: ['LC STEM', 'Livingstone College STEM', 'Computer Information Systems', 'Biology Pre-Med', 'Mathematics Data Science', 'HBCU STEM', 'Undergraduate Research', 'Student Hackathon Portfolio'],
   authors: [{ name: 'Livingstone College STEM Department' }],
   metadataBase: new URL(siteUrl),
