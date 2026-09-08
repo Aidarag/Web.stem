@@ -165,12 +165,6 @@ function SpotlightContent() {
                     </span>
                   )}
 
-                  {/* Class year */}
-                  {student.gradYear && (
-                    <span className="absolute top-4 right-4 border border-white/30 bg-black/40 backdrop-blur-sm text-white px-2.5 py-1 rounded-full font-mono text-xs font-bold">
-                      {student.gradYear}
-                    </span>
-                  )}
 
                   {/* Student info on image bottom */}
                   <div className="absolute bottom-4 left-4 right-4 space-y-1">
