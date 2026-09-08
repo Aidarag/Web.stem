@@ -44,8 +44,13 @@ function SpotlightContent() {
 
     if (majorParam) {
       // The URL is the external source of truth for directory filters.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setSelectedMajor(majorParam);
+      // If someone navigates with ?major=Business, fallback to 'All'
+      if (majorParam === 'Business') {
+        setSelectedMajor('All');
+      } else {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setSelectedMajor(majorParam);
+      }
     }
     if (idParam) {
       const student = studentSpotlights.find((s) => s.id === idParam);
@@ -104,7 +109,7 @@ function SpotlightContent() {
             <span className="font-mono text-xs uppercase tracking-wider text-gray-400 mr-1 flex items-center gap-1">
               <Filter className="h-3.5 w-3.5" /> Filter:
             </span>
-            {['All', 'Computer Information Systems', 'Biology', 'Mathematics', 'Business'].map((major) => (
+            {['All', 'Computer Information Systems', 'Biology', 'Mathematics'].map((major) => (
               <button
                 key={major}
                 onClick={() => {

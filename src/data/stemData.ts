@@ -15,6 +15,7 @@ export interface StudentSpotlight {
   certifications: string[];
   achievements: string[];
   featured: boolean;
+  hidden?: boolean;
   linkedin?: string;
   experiences?: StudentExperience[];
 }
@@ -100,9 +101,10 @@ export interface AcademicProgram {
   careers: string[];
   skills: string[];
   highlights: string[];
+  hidden?: boolean;
 }
 
-export const academicPrograms: AcademicProgram[] = [
+export const allAcademicPrograms: AcademicProgram[] = [
   {
     name: 'Computer Information Systems',
     slug: 'computer-information-systems',
@@ -142,6 +144,7 @@ export const academicPrograms: AcademicProgram[] = [
   {
     name: 'Business',
     slug: 'business',
+    hidden: true,
     overview: 'Bridging technical acumen with management strategy, the Business concentration within the LC STEM community prepares students for quantitative management, operations management, logistics, and data-driven corporate leadership.',
     careers: ['Business Intelligence Analyst', 'Operations Manager', 'Financial Analyst', 'Supply Chain Strategist', 'STEM Entrepreneur'],
     skills: ['Financial Analysis', 'Supply Chain Optimization', 'Market Data Analysis', 'Risk Management', 'Operations Strategy'],
@@ -153,7 +156,9 @@ export const academicPrograms: AcademicProgram[] = [
   }
 ];
 
-export const studentSpotlights: StudentSpotlight[] = [
+export const academicPrograms: AcademicProgram[] = allAcademicPrograms.filter((program) => !program.hidden);
+
+export const allStudentSpotlights: StudentSpotlight[] = [
   {
     id: '1',
     name: 'Jerome Adonis',
@@ -249,6 +254,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '7',
     name: 'Ellis Dogbe-Gakpetor',
     major: 'Business',
+    hidden: true,
     gradYear: 2027,
     photo: '/images/business-student-success/ellis-dogbe-gakpetor-accesspoint-profile.jpeg',
     photoPosition: '50% 20%',
@@ -336,6 +342,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '3',
     name: 'Kamar Goudelock',
     major: 'Business',
+    hidden: true,
     gradYear: 2027,
     photo: '/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg',
     photoPosition: '50% 20%',
@@ -373,6 +380,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '6',
     name: 'Emmanuel Amponsah',
     major: 'Business',
+    hidden: true,
     gradYear: 2028,
     photo: '/images/business-student-success/emmanuel-amponsah-business-profile.jpeg',
     photoPosition: '50% 20%',
@@ -599,6 +607,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '19',
     name: 'Shambhabi Sinha',
     major: 'Business',
+    hidden: true,
     gradYear: 2028,
     photo: '/images/business-student-success/shambhabi-sinha-profile.jpeg',
     photoPosition: 'top',
@@ -780,6 +789,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '30',
     name: 'Madalyn Jones',
     major: 'Business',
+    hidden: true,
     gradYear: 2028,
     photo: '/images/business-student-success/madalyn-jones-profile.jpg',
     cardPhoto: '/images/business-student-success/madalyn-jones-headshot.jpg',
@@ -811,6 +821,7 @@ export const studentSpotlights: StudentSpotlight[] = [
     id: '25',
     name: 'Esinam Dedoo',
     major: 'Business',
+    hidden: true,
     gradYear: 2028,
     photo: '/images/business-student-success/esinam-dedoo-profile.jpg',
     cardPhoto: '/images/business-student-success/esinam-dedoo-card.jpg',
@@ -884,6 +895,8 @@ export const studentSpotlights: StudentSpotlight[] = [
     linkedin: 'https://www.linkedin.com/in/emeglad-boakye-yiadom-54496838a/'
   }
 ];
+
+export const studentSpotlights: StudentSpotlight[] = allStudentSpotlights.filter((student) => !student.hidden);
 
 export const studentProjects: StudentProject[] = [
   {

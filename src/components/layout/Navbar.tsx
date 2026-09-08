@@ -4,12 +4,18 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, ArrowUpRight } from 'lucide-react';
 
 import Logo from '@/components/ui/Logo';
 import { academicPrograms } from '@/data/stemData';
 
-const navLinks = [
+interface NavLinkItem {
+  href: string;
+  label: string;
+  external?: boolean;
+}
+
+const navLinks: NavLinkItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/programs', label: 'Academic Programs' },
@@ -47,12 +53,26 @@ export default function Navbar() {
               return <ProgramsDropdown key={link.href} isActive={isProgramsActive} label={link.label} />;
             }
 
+            if (link.external) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-3.5 xl:px-4 py-2 font-sans text-xs font-semibold tracking-wide transition-colors duration-200 rounded-full text-gray-600 hover:text-purple-700"
+                >
+                  <span className="relative z-10">{link.label}</span>
+                </a>
+              );
+            }
+
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 font-sans text-xs font-semibold tracking-wide transition-colors duration-200 rounded-full ${
+                className={`relative px-3.5 xl:px-4 py-2 font-sans text-xs font-semibold tracking-wide transition-colors duration-200 rounded-full ${
                   isActive ? 'text-white font-bold' : 'text-gray-600 hover:text-purple-700'
                 }`}
               >
@@ -69,11 +89,19 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden lg:block">
+        {/* Desktop CTA Buttons */}
+        <div className="hidden lg:flex items-center gap-2.5">
+          <a
+            href="https://stem-program-delta.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group btn-gradient-lime inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 font-mono text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap"
+          >
+            Summer STEM <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
           <Link
             href="/contact"
-            className="group btn-gradient-lime inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 font-mono text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer"
+            className="group btn-gradient-lime inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 font-mono text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap"
           >
             Connect with us <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
@@ -160,6 +188,22 @@ export default function Navbar() {
                   );
                 }
 
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-sm font-semibold transition-all text-gray-700 hover:bg-gray-50 hover:text-purple-700 font-medium"
+                    >
+                      <span>{link.label}</span>
+                      <ArrowUpRight className="h-4 w-4 text-gray-400" />
+                    </a>
+                  );
+                }
+
                 const isActive = pathname === link.href;
                 return (
                   <Link
@@ -178,13 +222,24 @@ export default function Navbar() {
                 );
               })}
 
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-4 w-full rounded-2xl bg-purple-600 hover:bg-purple-700 py-3.5 text-center font-mono text-xs font-bold uppercase tracking-wider text-white shadow-md flex items-center justify-center gap-2 transition-all"
-              >
-                Connect with us <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="mt-4 flex flex-col gap-2.5">
+                <a
+                  href="https://stem-program-delta.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full btn-gradient-lime rounded-2xl py-3.5 text-center font-mono text-xs font-extrabold uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                >
+                  Summer STEM <ArrowUpRight className="h-4 w-4" />
+                </a>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full rounded-2xl bg-purple-600 hover:bg-purple-700 py-3.5 text-center font-mono text-xs font-bold uppercase tracking-wider text-white shadow-md flex items-center justify-center gap-2 transition-all"
+                >
+                  Connect with us <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

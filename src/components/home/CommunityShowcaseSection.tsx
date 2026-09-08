@@ -10,22 +10,22 @@ import { studentSpotlights } from '@/data/stemData';
 const marqueeCards = [
   { id: '1', name: 'Jerome Adonis', major: 'CIS Major', project: 'AWS Cloud Scaling Solutions', img: '/images/cis-student-success/jerome-adonis-headshot.jpg' },
   { id: '2', name: 'Francis Boadu', major: 'Biology Pre-Med', project: 'Oncology Research & Mammalian Assays', img: '/images/biology-student-success/francis-boadu-profile.jpg' },
-  { id: '3', name: 'Kamar Goudelock', major: 'Business & STEM', project: 'Wells Fargo Control Operations Analytics', img: '/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg' },
+  { id: '11', name: 'Swetakshi Nanda', major: 'CIS Major', project: 'AI in Environmental Education Research', img: '/images/cis-student-success/swetakshi-nanda-profile.jpeg' },
   { id: '4', name: 'Sally Adenutsi', major: 'Math Honors', project: 'Global Leadership & Math Mentorship', img: '/images/math-student-success/sally-adenutsi-profile.jpeg' },
   { id: '16', name: 'Aïda Garba', major: 'CIS Major', project: 'Student Success Center Digital Timesheet', img: '/images/cis-student-success/im-aida-garba-profile.jpeg' },
   { id: '8', name: 'Jephter Ofori', major: 'CIS Fellow', project: 'Syngenta Data Automation Scripting', img: '/images/cis-student-success/jephter-ofori-syngenta-profile.png' },
   { id: '15', name: 'Francis Suapim', major: 'Mathematics', project: 'ACSC Ghanaian MSME Structural Analysis', img: '/images/math-student-success/francis-suapim-profile-v2.png' },
-  { id: '6', name: 'Emmanuel Amponsah', major: 'Business & STEM', project: 'Asset Management & Equity Research', img: '/images/business-student-success/emmanuel-amponsah-business-profile.jpeg' },
+  { id: '5', name: 'Robert Osei', major: 'Biology Major', project: 'Poe Center Health Science Fellow', img: '/images/biology-student-success/robert-osei-poe-center-internship.jpeg' },
   { id: '24', name: 'Prosper Nasangma', major: 'Computer and Information Systems', project: '2026 PFX Student Researcher', img: '/images/cis-student-success/prosper-profile.png' },
   // Duplicate for seamless infinite marquee scroll
   { id: '1', name: 'Jerome Adonis', major: 'CIS Major', project: 'AWS Cloud Scaling Solutions', img: '/images/cis-student-success/jerome-adonis-headshot.jpg' },
   { id: '2', name: 'Francis Boadu', major: 'Biology Pre-Med', project: 'Oncology Research & Mammalian Assays', img: '/images/biology-student-success/francis-boadu-profile.jpg' },
-  { id: '3', name: 'Kamar Goudelock', major: 'Business & STEM', project: 'Wells Fargo Control Operations Analytics', img: '/images/business-student-success/kamar-goudelock-wells-fargo-internship.jpeg' },
+  { id: '11', name: 'Swetakshi Nanda', major: 'CIS Major', project: 'AI in Environmental Education Research', img: '/images/cis-student-success/swetakshi-nanda-profile.jpeg' },
   { id: '4', name: 'Sally Adenutsi', major: 'Math Honors', project: 'Global Leadership & Math Mentorship', img: '/images/math-student-success/sally-adenutsi-profile.jpeg' },
   { id: '16', name: 'Aïda Garba', major: 'CIS Major', project: 'Student Success Center Digital Timesheet', img: '/images/cis-student-success/im-aida-garba-profile.jpeg' },
   { id: '8', name: 'Jephter Ofori', major: 'CIS Fellow', project: 'Syngenta Data Automation Scripting', img: '/images/cis-student-success/jephter-ofori-syngenta-profile.png' },
   { id: '15', name: 'Francis Suapim', major: 'Mathematics', project: 'ACSC Ghanaian MSME Structural Analysis', img: '/images/math-student-success/francis-suapim-profile-v2.png' },
-  { id: '6', name: 'Emmanuel Amponsah', major: 'Business & STEM', project: 'Asset Management & Equity Research', img: '/images/business-student-success/emmanuel-amponsah-business-profile.jpeg' },
+  { id: '5', name: 'Robert Osei', major: 'Biology Major', project: 'Poe Center Health Science Fellow', img: '/images/biology-student-success/robert-osei-poe-center-internship.jpeg' },
   { id: '24', name: 'Prosper Nasangma', major: 'Computer and Information Systems', project: '2026 PFX Student Researcher', img: '/images/cis-student-success/prosper-profile.png' },
 ];
 

@@ -152,12 +152,12 @@ export default function AboutPage() {
               Our Technical Focus Areas
             </h2>
             <p className="font-sans text-base text-gray-600">
-              The LC STEM community collaborates across four core concentrations, building software and executing molecular science.
+              The LC STEM community collaborates across three core concentrations, building software and executing molecular science.
             </p>
           </ScrollReveal>
 
           {/* Tracks grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {[
               {
                 title: 'Biology',
@@ -175,7 +175,8 @@ export default function AboutPage() {
                 title: 'Business',
                 desc: 'Quantitative management strategists, supply chain simulation modeling, and small-business pricing analytics.',
                 icon: <TrendingUp className="h-6 w-6" />,
-                topics: ['Supply Chain AI', 'Pricing Analytics', 'Quantitative Strategy']
+                topics: ['Supply Chain AI', 'Pricing Analytics', 'Quantitative Strategy'],
+                hidden: true,
               },
               {
                 title: 'Mathematics',
@@ -183,7 +184,7 @@ export default function AboutPage() {
                 icon: <Binary className="h-6 w-6" />,
                 topics: ['Actuarial Science', 'GIS Analytics', 'Proof Formulation']
               }
-            ].map((track) => (
+            ].filter((track) => !track.hidden).map((track) => (
               <ScrollReveal
                 key={track.title}
                 className="group bg-white rounded-3xl border border-gray-200/90 p-7 shadow-lg hover:shadow-2xl hover:border-purple-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full cursor-pointer"

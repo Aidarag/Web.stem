@@ -68,12 +68,12 @@ const incomingInquiryTemplates = [
     name: 'Daniel Kim',
     major: 'Mathematics' as const,
     message: 'How is the preparation for actuarial exams structured within the mathematics program?',
-  },
-  {
-    name: 'Elena Rostova',
-    major: 'Business' as const,
-    message: 'Are there any seed funding opportunities for students participating in the annual business plan competition?',
   }
+  // {
+  //   name: 'Elena Rostova',
+  //   major: 'Business' as const,
+  //   message: 'Are there any seed funding opportunities for students participating in the annual business plan competition?',
+  // }
 ];
 
 interface ResponseConsoleProps {

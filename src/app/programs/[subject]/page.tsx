@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { Code, Briefcase, Award, CheckCircle2 } from 'lucide-react';
 import { academicPrograms } from '@/data/stemData';
 import BiologyStudentSuccessSection from '@/components/programs/BiologyStudentSuccessSection';
@@ -30,6 +30,10 @@ export async function generateMetadata({ params }: SubjectPageProps): Promise<Me
 
 export default async function SubjectPage({ params }: SubjectPageProps) {
   const { subject } = await params;
+  if (subject === 'business') {
+    redirect('/programs/computer-information-systems');
+  }
+
   const program = academicPrograms.find((p) => p.slug === subject);
   if (!program) notFound();
 
@@ -107,7 +111,8 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
         </div>
       )}
 
-      {program.slug === 'business' && (
+      {/* Hidden Business section kept in code for future use */}
+      {false && (
         <div className="lg:col-span-12">
           <BusinessStudentSuccessSection />
         </div>
